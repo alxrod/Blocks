@@ -19,6 +19,7 @@
 		B41D497C2403288C00210C9A /* BlockRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41D497B2403288C00210C9A /* BlockRow.swift */; };
 		B41D497E24033AD200210C9A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41D497D24033AD200210C9A /* PageViewController.swift */; };
 		B41D498224033BE800210C9A /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41D498124033BE800210C9A /* PageView.swift */; };
+		B449537D243A10D2000F9C13 /* TextFieldCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B449537C243A10D1000F9C13 /* TextFieldCustom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		B41D497B2403288C00210C9A /* BlockRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockRow.swift; sourceTree = "<group>"; };
 		B41D497D24033AD200210C9A /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		B41D498124033BE800210C9A /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		B449537C243A10D1000F9C13 /* TextFieldCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				B41D49792403264700210C9A /* HistoryView.swift */,
 				B41D497B2403288C00210C9A /* BlockRow.swift */,
 				B41D497724031F3C00210C9A /* EndBlockView.swift */,
+				B449537C243A10D1000F9C13 /* TextFieldCustom.swift */,
 				B41D49672403166800210C9A /* Assets.xcassets */,
 				B41D496C2403166800210C9A /* LaunchScreen.storyboard */,
 				B41D496F2403166800210C9A /* Info.plist */,
@@ -167,6 +170,7 @@
 				B41D49622403165A00210C9A /* AppDelegate.swift in Sources */,
 				B41D497A2403264700210C9A /* HistoryView.swift in Sources */,
 				B41D497824031F3C00210C9A /* EndBlockView.swift in Sources */,
+				B449537D243A10D2000F9C13 /* TextFieldCustom.swift in Sources */,
 				B41D49642403165A00210C9A /* SceneDelegate.swift in Sources */,
 				B41D49662403165A00210C9A /* ContentView.swift in Sources */,
 				B41D49762403199E00210C9A /* colorConv.swift in Sources */,

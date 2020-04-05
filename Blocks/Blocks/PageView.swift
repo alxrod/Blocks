@@ -8,26 +8,33 @@
 
 import SwiftUI
 
-struct PageView<Page: View>: View {
+struct PageView: View {
     
-    var viewControllers: [UIHostingController<Page>]
+    var viewControllers = [
+        UIHostingController(rootView: ContentView(referenceData: Date().addingTimeInterval(10))),
+        UIHostingController(rootView: HistoryView()),
+    ]
     
-    init(_ views: [Page]) {
-        self.viewControllers = views.map { UIHostingController(rootView: $0) }
+    init() {
+        
     }
     var body: some View {
-        PageViewController(controllers: viewControllers).edgesIgnoringSafeArea(.all)
+        NavigationView {
+            PageViewController(controllers: viewControllers).edgesIgnoringSafeArea(.all)
+        }
+        .navigationBarTitle("", displayMode: .inline)
+        .navigationBarHidden(true)
         
     }
 }
 
-func pipeViews(view1: View, view2: View) -> [View] {
-    let views = [view1, view2]
-    return views
-}
+//func pipeViews(view1: View, view2: View) -> [View] {
+//    let views = [view1, view2]
+//    return views
+//}
 
 struct PageView_Previews: PreviewProvider {
     static var previews: some View {
-        PageView([ContentView(),HistoryView()])
+        PageView()
     }
 }

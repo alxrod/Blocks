@@ -29,7 +29,8 @@ struct HistoryView: View {
                     BlockRow(bgColor: Color(UIColor(rgb: 0xB13133)))
             }
         }
-        .navigationBarTitle(Text("Progress"))
+        .navigationBarTitle(Text("blank"),displayMode: .inline)
+        .navigationBarHidden(true)
     }
 }
 
