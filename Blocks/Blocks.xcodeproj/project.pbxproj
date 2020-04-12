@@ -20,6 +20,8 @@
 		B41D497E24033AD200210C9A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41D497D24033AD200210C9A /* PageViewController.swift */; };
 		B41D498224033BE800210C9A /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41D498124033BE800210C9A /* PageView.swift */; };
 		B449537D243A10D2000F9C13 /* TextFieldCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B449537C243A10D1000F9C13 /* TextFieldCustom.swift */; };
+		B46BC1D224420DA600740BA9 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46BC1D124420DA600740BA9 /* UserData.swift */; };
+		B46BC1D524420E9500740BA9 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46BC1D424420E9500740BA9 /* Block.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		B41D497D24033AD200210C9A /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		B41D498124033BE800210C9A /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		B449537C243A10D1000F9C13 /* TextFieldCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustom.swift; sourceTree = "<group>"; };
+		B46BC1D124420DA600740BA9 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		B46BC1D424420E9500740BA9 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 		B41D49602403165A00210C9A /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
+				B46BC1D324420E8A00740BA9 /* Models */,
 				B41D498124033BE800210C9A /* PageView.swift */,
 				B41D49612403165A00210C9A /* AppDelegate.swift */,
 				B41D49632403165A00210C9A /* SceneDelegate.swift */,
@@ -79,6 +84,7 @@
 				B41D497B2403288C00210C9A /* BlockRow.swift */,
 				B41D497724031F3C00210C9A /* EndBlockView.swift */,
 				B449537C243A10D1000F9C13 /* TextFieldCustom.swift */,
+				B46BC1D124420DA600740BA9 /* UserData.swift */,
 				B41D49672403166800210C9A /* Assets.xcassets */,
 				B41D496C2403166800210C9A /* LaunchScreen.storyboard */,
 				B41D496F2403166800210C9A /* Info.plist */,
@@ -94,6 +100,14 @@
 				B41D496A2403166800210C9A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B46BC1D324420E8A00740BA9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B46BC1D424420E9500740BA9 /* Block.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,9 +186,11 @@
 				B41D497824031F3C00210C9A /* EndBlockView.swift in Sources */,
 				B449537D243A10D2000F9C13 /* TextFieldCustom.swift in Sources */,
 				B41D49642403165A00210C9A /* SceneDelegate.swift in Sources */,
+				B46BC1D224420DA600740BA9 /* UserData.swift in Sources */,
 				B41D49662403165A00210C9A /* ContentView.swift in Sources */,
 				B41D49762403199E00210C9A /* colorConv.swift in Sources */,
 				B41D497C2403288C00210C9A /* BlockRow.swift in Sources */,
+				B46BC1D524420E9500740BA9 /* Block.swift in Sources */,
 				B41D498224033BE800210C9A /* PageView.swift in Sources */,
 				B41D497E24033AD200210C9A /* PageViewController.swift in Sources */,
 			);

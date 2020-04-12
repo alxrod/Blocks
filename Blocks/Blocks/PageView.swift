@@ -9,15 +9,14 @@
 import SwiftUI
 
 struct PageView: View {
+    @EnvironmentObject var userData: UserData
+    var viewControllers: [UIViewController]  = [UIViewController]()
     
-    var viewControllers = [
-        UIHostingController(rootView: ContentView(referenceData: Date().addingTimeInterval(10))),
-        UIHostingController(rootView: HistoryView()),
-    ]
-    
-    init() {
-        
+    mutating func setUpViews(envirObj: UserData) {
+        self.viewControllers.append(UIHostingController(rootView: ContentView(referenceData: Date().addingTimeInterval(10)).environmentObject(envirObj)))
+        self.viewControllers.append(UIHostingController(rootView: HistoryView().environmentObject(envirObj)))
     }
+    
     var body: some View {
         NavigationView {
             PageViewController(controllers: viewControllers).edgesIgnoringSafeArea(.all)
@@ -35,6 +34,6 @@ struct PageView: View {
 
 struct PageView_Previews: PreviewProvider {
     static var previews: some View {
-        PageView()
+        PageView().environmentObject(UserData())
     }
 }

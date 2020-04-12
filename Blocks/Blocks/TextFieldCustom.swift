@@ -54,6 +54,7 @@ struct TextFieldCustom: UIViewRepresentable {
             textfield.becomeFirstResponder()
         }
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            self.parent.text = textField.text ?? ""
             print("User entered " + self.parent.text)
             self.parent.responseAction()
             return true

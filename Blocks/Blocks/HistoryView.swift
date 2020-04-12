@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct HistoryView: View {
+    @EnvironmentObject var userData: UserData
     init() {
         // To remove only extra separators below the list:
         UITableView.appearance().tableFooterView = UIView()
@@ -21,12 +22,10 @@ struct HistoryView: View {
         VStack(alignment: .leading){
             Text("Progress").font(.system(size:40)).fontWeight(.bold).padding(.leading, 20).padding(.top,40)
             List {
-                    BlockRow(bgColor: Color(UIColor(rgb: 0x5D87A1)))
-                    BlockRow(bgColor: Color(UIColor(rgb: 0xB13133)))
-                    BlockRow(bgColor: Color(UIColor(rgb: 0x5D87A1)))
-                    BlockRow(bgColor: Color(UIColor(rgb: 0xB13133)))
-                    BlockRow(bgColor: Color(UIColor(rgb: 0x5D87A1)))
-                    BlockRow(bgColor: Color(UIColor(rgb: 0xB13133)))
+                ForEach(self.userData.blocks, id: \.id) { block in
+                    BlockRow(note: block.note, bg: Color(UIColor(rgb: 0x5D87A1)))
+                }
+                
             }
         }
         .navigationBarTitle(Text("blank"),displayMode: .inline)

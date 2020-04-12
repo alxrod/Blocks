@@ -15,6 +15,7 @@ struct ContentView: View {
     @State var isScreenActive: Bool = false
     @State var needToReset = false
     @State var referenceData: Date
+    @EnvironmentObject var userData: UserData
     var timer: Timer {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer: Timer) in
                 self.nowDate=Date()
@@ -53,7 +54,7 @@ struct ContentView: View {
                         }
                         let _ = self.timer
                     })
-                NavigationLink(destination: EndBlockView(), isActive: $isScreenActive) {
+                NavigationLink(destination: EndBlockView().environmentObject(userData), isActive: $isScreenActive) {
                     Spacer()
                 }
                     

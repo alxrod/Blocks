@@ -13,6 +13,7 @@ struct EndBlockView: View {
     @State var focused: [Bool] = [false]
     @State var nowDate: Date = Date()
     @State var backgroundColor = 0x94AD58
+    @EnvironmentObject var userData: UserData
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let referenceDate: Date = Date().addingTimeInterval(10.0)
     
@@ -20,7 +21,6 @@ struct EndBlockView: View {
     Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer: Timer) in
             self.nowDate=Date()
             let diff = Calendar.current.dateComponents([.minute, .second], from: self.nowDate, to: self.referenceDate)
-             print ("Clocking with \(diff)")
             if (diff.minute == 0 && diff.second == 0) {
                 print("Timer ended!")
                 timer.invalidate()
@@ -47,7 +47,11 @@ struct EndBlockView: View {
 
                 HStack {
                     TextFieldCustom(keyboardType: .default, returnVal: .done, tag: 0,placeholder:"Hope it was productive", text: self.$note, isfocusAble: self.$focused) {
-                        print("Test from here")
+                        let block: Block = Block(id: self.userData.blocks.count, note: self.note, score: 1, bg: 0xB13133,time:Date())
+                        print("Adding block:")
+                        print(block)
+                        self.userData.blocks.append(block)
+//                        print("Test from here")
                         self.presentationMode.wrappedValue.dismiss()
                     }
                         .frame(width: 300, height: 35, alignment: .center)
