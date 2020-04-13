@@ -9,28 +9,29 @@
 import SwiftUI
 import Combine
 
-final class UserData: ObservableObject {
-    var raw_data: Data? = UserDefaults.standard.data(forKey: "blocks")
-    @Published var blocks: [Block] {
-        didSet {
-            print("Writing User Default data")
-            UserDefaults.standard.set(try! PropertyListEncoder().encode(self.blocks), forKey: "blocks")
-        }
-    }
+class UserData: ObservableObject {
+    @Published var blocks = [Block]()
+    
+    private var cancellables = Set<AnyCancellable>()
     
     init () {
         print("Initializing user info")
-        if let data = self.raw_data {
-            do {
-                try blocks = PropertyListDecoder().decode([Block].self, from: data)
-                print("Successfully decoded blocks from UserDefaults as: ")
-                print(self.blocks)
-            } catch {
-                print("Could not decode block data from UserDefaults")
-                self.blocks = [Block]()
+        if let data = UserDefaults.standard.data(forKey: "blocks") {
+            print("Found something saved at least")
+            let decoder = PropertyListDecoder()
+            if let decoded = try? decoder.decode([Block].self, from: data) {
+                print("Loaded saved blocks")
+                self.blocks = decoded
             }
-        } else {
-            self.blocks = [Block]()
         }
+        
+        self.$blocks
+            .dropFirst()
+            .sink { (blocks: [Block]) in
+                print("Trying to save on the user side")
+                print(blocks)
+                UserDefaults.standard.set(try! PropertyListEncoder().encode(blocks), forKey: "blocks")
+            }.store(in: &cancellables)
+        
     }
 }
