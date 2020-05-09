@@ -21,6 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         
+//        Data reset_code:
+//        UserDefaults.standard.set(try! PropertyListEncoder().encode([Block]()), forKey: "blocks")
+        
+        
         var userData = UserData()
         var pageView = PageView()
         pageView.setUpViews(envirObj: userData)

@@ -23,7 +23,7 @@ struct HistoryView: View {
             Text("Progress").font(.system(size:40)).fontWeight(.bold).padding(.leading, 20).padding(.top,40)
             List {
                 ForEach(self.userData.blocks, id: \.id) { block in
-                    BlockRow(note: block.note, bg: Color(UIColor(rgb: 0x5D87A1)))
+                    BlockRow(block: block)
                 }
                 
             }
@@ -35,6 +35,6 @@ struct HistoryView: View {
 
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryView()
+        HistoryView().environmentObject(UserData())
     }
 }

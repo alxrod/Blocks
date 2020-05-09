@@ -11,6 +11,19 @@ import Combine
 
 class UserData: ObservableObject {
     @Published var blocks = [Block]()
+    var UpdateGradResp = {() -> Void in return }
+    var needToUpdateGrad = false {
+        willSet(newValue) {
+            if (newValue == true) {
+                UpdateGradResp()
+            }
+            print("will set")
+            objectWillChange.send()
+        }
+        didSet {
+            needToUpdateGrad = false
+        }
+    }
     
     private var cancellables = Set<AnyCancellable>()
     

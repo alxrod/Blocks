@@ -22,6 +22,7 @@
 		B449537D243A10D2000F9C13 /* TextFieldCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B449537C243A10D1000F9C13 /* TextFieldCustom.swift */; };
 		B46BC1D224420DA600740BA9 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46BC1D124420DA600740BA9 /* UserData.swift */; };
 		B46BC1D524420E9500740BA9 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46BC1D424420E9500740BA9 /* Block.swift */; };
+		B4EDFA952444E39100EA03E8 /* UserSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EDFA942444E39100EA03E8 /* UserSettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		B449537C243A10D1000F9C13 /* TextFieldCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustom.swift; sourceTree = "<group>"; };
 		B46BC1D124420DA600740BA9 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		B46BC1D424420E9500740BA9 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		B4EDFA942444E39100EA03E8 /* UserSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				B41D49612403165A00210C9A /* AppDelegate.swift */,
 				B41D49632403165A00210C9A /* SceneDelegate.swift */,
 				B41D49652403165A00210C9A /* ContentView.swift */,
+				B4EDFA942444E39100EA03E8 /* UserSettingsView.swift */,
 				B41D497D24033AD200210C9A /* PageViewController.swift */,
 				B41D49792403264700210C9A /* HistoryView.swift */,
 				B41D497B2403288C00210C9A /* BlockRow.swift */,
@@ -192,6 +195,7 @@
 				B41D497C2403288C00210C9A /* BlockRow.swift in Sources */,
 				B46BC1D524420E9500740BA9 /* Block.swift in Sources */,
 				B41D498224033BE800210C9A /* PageView.swift in Sources */,
+				B4EDFA952444E39100EA03E8 /* UserSettingsView.swift in Sources */,
 				B41D497E24033AD200210C9A /* PageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

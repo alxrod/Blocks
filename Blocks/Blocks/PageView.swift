@@ -14,7 +14,11 @@ struct PageView: View {
     
     mutating func setUpViews(envirObj: UserData) {
         self.viewControllers.append(UIHostingController(rootView: ContentView(referenceData: Date().addingTimeInterval(10)).environmentObject(envirObj)))
+        self.viewControllers.append(UIHostingController(rootView: UserSettingsView().environmentObject(envirObj)))
         self.viewControllers.append(UIHostingController(rootView: HistoryView().environmentObject(envirObj)))
+        
+        
+        
     }
     
     var body: some View {
@@ -23,6 +27,15 @@ struct PageView: View {
         }
         .navigationBarTitle("", displayMode: .inline)
         .navigationBarHidden(true)
+        .onAppear() {
+            print("Hello World")
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+            print("Moving to the background!")
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+            print("Moving to the foreground")
+        }
         
     }
 }

@@ -15,13 +15,13 @@ struct EndBlockView: View {
     @State var backgroundColor = 0x94AD58
     @EnvironmentObject var userData: UserData
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    let referenceDate: Date = Date().addingTimeInterval(10.0)
+    let referenceDate: Date = Date().addingTimeInterval(60*5)
     
     var timer: Timer {
     Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer: Timer) in
             self.nowDate=Date()
             let diff = Calendar.current.dateComponents([.minute, .second], from: self.nowDate, to: self.referenceDate)
-            if (diff.minute == 0 && diff.second == 0) {
+        if ((diff.minute == 0 && diff.second == 0) || self.nowDate > self.referenceDate) {
                 print("Timer ended!")
                 timer.invalidate()
                 self.backgroundColor = 0xB13133
@@ -47,10 +47,11 @@ struct EndBlockView: View {
 
                 HStack {
                     TextFieldCustom(keyboardType: .default, returnVal: .done, tag: 0,placeholder:"Hope it was productive", text: self.$note, isfocusAble: self.$focused) {
-                        let block: Block = Block(id: self.userData.blocks.count, note: self.note, score: 1, bg: 0xB13133,time:Date())
+                        let block: Block = Block(id: self.userData.blocks.count, note: self.note, score: 0, bg: 0xB13133,time:Date())
                         print("Adding block:")
                         print(block)
                         self.userData.blocks.append(block)
+                        self.userData.needToUpdateGrad = true
 //                        print("Test from here")
                         self.presentationMode.wrappedValue.dismiss()
                     }
@@ -82,6 +83,6 @@ struct EndBlockView: View {
 
 struct EndBlockView_Previews: PreviewProvider {
     static var previews: some View {
-        EndBlockView()
+        EndBlockView().environmentObject(UserData())
     }
 }
